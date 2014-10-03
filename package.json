@@ -1,0 +1,31 @@
+{
+  "name": "sample-apps",
+  "version": "1.0.0",
+  "description": "bundles and manages paths to sample mobile apps, for testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appium/sample-apps.git"
+  },
+  "keywords": [
+    "appium",
+    "test",
+    "app"
+  ],
+  "author": "jonahss",
+  "license": "apache-2.0",
+  "bugs": {
+    "url": "https://github.com/appium/sample-apps/issues"
+  },
+  "homepage": "https://github.com/appium/sample-apps",
+  "optionalDependencies": {
+    "android-apidemos": "^1.0.1",
+    "uicatalog-app-iphonesimulator7.1": "^2.0.1"
+  },
+  "dependencies": {
+    "underscore": "^1.7.0"
+  }
+}
