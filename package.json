@@ -1,6 +1,6 @@
 {
   "name": "sample-apps",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "bundles and manages paths to sample mobile apps, for testing",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,11 @@
   "homepage": "https://github.com/appium/sample-apps",
   "optionalDependencies": {
     "android-apidemos": "^1.0.1",
-    "uicatalog-app-iphonesimulator7.1": "^2.0.1"
+    "gps-demo-app": "^1.0.0",
+    "ios-test-app": "^1.0.1",
+    "toggle-test-app": "^1.0.0",
+    "uicatalog-app-iphonesimulator7.1": "^2.0.1",
+    "io.appium.gappium.sampleapp": "^1.1.1"
   },
   "dependencies": {
     "underscore": "^1.7.0"
