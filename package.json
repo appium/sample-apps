@@ -1,6 +1,6 @@
 {
   "name": "sample-apps",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "bundles and manages paths to sample mobile apps, for testing",
   "main": "index.js",
   "scripts": {
