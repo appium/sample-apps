@@ -53,7 +53,7 @@ var getApp = function(app) {
 
   // then search static apps
   var preBuilt = fs.readdirSync(path.resolve(__dirname, 'pre-built'));
-  preBuilt = _.sortBy(preBuilt, 'length');
+  preBuilt = _.sortBy(preBuilt, 'length').reverse();
   var appPath = _.find(preBuilt, function(name) {
     return name.indexOf(app) >= 0;
   });
