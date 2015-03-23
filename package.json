@@ -26,7 +26,6 @@
     "gps-demo-app": "^1.0.0",
     "ios-test-app": "^1.0.1",
     "toggle-test-app": "^1.0.0",
-    "uicatalog-app-iphonesimulator7.1": "^2.0.1",
     "io.appium.gappium.sampleapp": "^1.1.1"
   },
   "dependencies": {
