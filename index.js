@@ -38,8 +38,10 @@ var getPathsFromOptionalDeps = function() {
   return _.flatten(unflattened);
 }
 
+// get an app by name.
+// If you specify only the beginning of a name, return first alphabetical match
+var _getApp = function(app) {
 
-var getApp = function(app) {
   // first search npm modules
   var optionalDeps = getPathsFromOptionalDeps();
   optionalDeps = _.sortBy(optionalDeps, 'length');
@@ -53,7 +55,7 @@ var getApp = function(app) {
 
   // then search static apps
   var preBuilt = fs.readdirSync(path.resolve(__dirname, 'pre-built'));
-  preBuilt = _.sortBy(preBuilt, 'length').reverse();
+  preBuilt = _.sortBy(preBuilt, 'length');
   var appPath = _.find(preBuilt, function(name) {
     return name.indexOf(app) >= 0;
   });
@@ -63,6 +65,28 @@ var getApp = function(app) {
   }
 
   return undefined;
+}
+
+// get an app by name.
+// If you specify only the beginning of a name, return first alphabetical match
+// Optional `realDevice` param is a boolean.
+// If true: add '-iphoneos' to the name of the app,
+// otherwise adds '-iphonesimulator'. If false and no app
+// is found, try to return an app just by name with no special suffix.
+var getApp = function(app, realDevice) {
+  var appPath;
+
+  if (realDevice) {
+    appPath = _getApp(app+'-iphoneos');
+  } else {
+    appPath = _getApp(app+'-iphonesimulator');
+  }
+
+  if (!appPath) {
+    appPath = _getApp(app);
+  }
+
+  return appPath;
 }
 
 module.exports = getApp;
