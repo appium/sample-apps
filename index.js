@@ -14,7 +14,15 @@ var getOptionalDeps = function() {
 }
 
 var appPathsForModule = function(module) {
-  var moduleEntrypoint = require.resolve(module);
+  try {
+    var moduleEntrypoint = require.resolve(module);
+  } catch (e) {
+    if (e.code == "MODULE_NOT_FOUND") {
+      return [];
+    } else {
+      throw e;
+    }
+  }
 
   if (_.last(moduleEntrypoint.split('.')) == 'json') {
     var moduleBasePath = moduleEntrypoint.split(path.sep).slice(0, -1).join(path.sep);
