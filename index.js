@@ -24,9 +24,15 @@ var appPathsForModule = function(module) {
     }
   }
 
-  if (_.last(moduleEntrypoint.split('.')) == 'json') {
+  var ext = _.last(moduleEntrypoint.split('.'));
+  if (ext == 'json' || ext == 'js') {
     var moduleBasePath = moduleEntrypoint.split(path.sep).slice(0, -1).join(path.sep);
     var paths = require(module);
+    if(paths.absolute) {
+      // support for the more recent ios-test-app format
+      paths = [paths.absolute.iphoneos, paths.absolute.iphonesimulator];
+      return paths;
+    }
     return paths.map(function(appPath) {
       return moduleBasePath + path.sep + path.normalize(appPath);
     });
