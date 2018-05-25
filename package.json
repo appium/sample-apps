@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/appium/sample-apps",
   "optionalDependencies": {
-    "android-apidemos": "^1.1.1",
+    "android-apidemos": "^3.0.0",
     "gps-demo-app": "^1.0.0",
     "ios-test-app": "^2.1.3",
     "ios-uicatalog": "^1.0.0",
