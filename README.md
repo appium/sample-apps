@@ -1,5 +1,7 @@
 ##sample-apps##
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/appium/sample-apps.svg)](https://greenkeeper.io/)
+
 `npm install sample-apps`
 
 
